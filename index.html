@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Theme Diagram Builder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow">Live diagram studio</p>
+          <h1>Build colorful diagrams you can change in seconds.</h1>
+          <p class="intro">
+            Edit labels, switch palettes, and tune colors live. The diagram redraws
+            instantly so this can be dropped into demos, planning pages, or docs.
+          </p>
+        </div>
+        <div class="theme-card" aria-label="Current theme preview">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="controls" aria-label="Diagram controls">
+          <h2>Customize</h2>
+          <label>
+            Diagram title
+            <input id="diagramTitle" type="text" value="Launch workflow" />
+          </label>
+
+          <label>
+            Theme preset
+            <select id="themePreset">
+              <option value="candy">Candy Pop</option>
+              <option value="ocean">Ocean Glow</option>
+              <option value="sunset">Sunset Punch</option>
+              <option value="forest">Neon Forest</option>
+            </select>
+          </label>
+
+          <div class="color-grid">
+            <label>
+              Background
+              <input id="backgroundColor" type="color" value="#100f2e" />
+            </label>
+            <label>
+              Accent
+              <input id="accentColor" type="color" value="#ff4ecd" />
+            </label>
+            <label>
+              Node A
+              <input id="nodeOneColor" type="color" value="#7c5cff" />
+            </label>
+            <label>
+              Node B
+              <input id="nodeTwoColor" type="color" value="#00d4ff" />
+            </label>
+          </div>
+
+          <label>
+            Step labels <small>(one per line)</small>
+            <textarea id="steps" rows="6">Discover idea
+Design flow
+Build demo
+Share live</textarea>
+          </label>
+        </aside>
+
+        <section class="diagram-stage" aria-live="polite">
+          <div class="diagram-header">
+            <p class="eyebrow">Editable theme</p>
+            <h2 id="titlePreview">Launch workflow</h2>
+          </div>
+          <div id="diagram" class="diagram" role="list" aria-label="Live process diagram"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
