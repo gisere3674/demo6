@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body { width: 350px; padding: 15px; font-family: Arial, sans-serif; text-align: center; }
+      button { 
+        padding: 10px 20px; 
+        background-color: #ff4757; 
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        font-weight: bold;
+        font-size: 16px;
+      }
+      button:hover { background-color: #ff6b81; }
+      #result { 
+        display: none;
+        margin-top: 15px; 
+        text-align: left; 
+        font-size: 14px; 
+        line-height: 1.5; 
+        color: #333; 
+        background: #f1f2f6;
+        padding: 10px;
+        border-radius: 8px;
+        min-height: 40px;
+      }
+      /* Yüklenme Animasyonu CSS'i */
+      #spinner {
+        display: none;
+        height: 64px;
+        width: auto;
+        margin: 15px auto;
+        border-radius: 4px;
+      }
+      
+      /* Ayarlar Linki CSS'i */
+      #optionsLink {
+        display: inline-block;
+        margin-bottom: 15px;
+        padding: 8px 16px;
+        background-color: #2f3640;
+        color: white;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        transition: background-color 0.2s;
+      }
+      #optionsLink:hover {
+        background-color: #353b48;
+      }
+    </style>
+  </head>
+  <body>
+    <a id="optionsLink"><span style="font-size: 16px; margin-right: 5px;">⚙️</span>Settings</a>
+    <h2>Solve the Mystery</h2>
+    <button id="askBtn">What IS THAT?</button>
+    <img id="spinner" src="kurukuru.gif" />
+    <p id="result"></p>
+    <script src="popup.js"></script>
+  </body>
+</html>

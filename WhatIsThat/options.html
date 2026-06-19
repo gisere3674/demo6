@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>What is that? - Settings</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      padding: 30px; 
+      max-width: 500px; 
+      margin: 0 auto;
+      background-color: #f8f9fa;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    h2 { color: #2f3640; margin-top: 0; }
+    label { font-weight: bold; color: #353b48; }
+    input, select { 
+      width: 100%; 
+      padding: 12px; 
+      margin-top: 10px; 
+      margin-bottom: 15px; 
+      box-sizing: border-box; 
+      border: 1px solid #dcdde1;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+    button { 
+      padding: 12px 20px; 
+      background-color: #ff4757; 
+      color: white; 
+      border: none; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      font-weight: bold;
+      width: 100%;
+    }
+    button:hover { background-color: #ff6b81; }
+    #status { margin-top: 15px; color: #2ed573; font-weight: bold; text-align: center; height: 20px;}
+    .help-text { font-size: 13px; color: #7f8fa6; margin-bottom: 20px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Extension Settings</h2>
+    <p class="help-text">Please provide your API key for the selected AI provider to enable the extension.</p>
+    
+    <label for="enableQuickIcon">Quick Action Icon:</label>
+    <div style="margin-top: 10px; margin-bottom: 15px;">
+      <label style="font-weight: normal; color: #333; cursor: pointer;">
+        <input type="checkbox" id="enableQuickIcon" style="width: auto; margin: 0 5px 0 0;" checked>
+        Show icon when text is selected
+      </label>
+    </div>
+    
+    <label for="provider">AI Provider:</label>
+    <select id="provider">
+        <option value="ai21">AI21 Labs</option>
+        <option value="alibaba">Alibaba Cloud</option>
+        <option value="anthropic">Anthropic (Claude)</option>
+        <option value="anyscale">AnyScale</option>
+        <option value="cerebras">Cerebras</option>
+        <option value="cohere">Cohere</option>
+        <option value="deepinfra">DeepInfra</option>
+        <option value="deepseek">DeepSeek</option>
+        <option value="fireworks">Fireworks AI</option>
+        <option value="gemini">Gemini (Google)</option>
+        <option value="groq">Groq</option>
+        <option value="huggingface">Hugging Face</option>
+        <option value="hyperbolic">Hyperbolic</option>
+        <option value="mistral">Mistral AI</option>
+        <option value="moonshot">Moonshot AI</option>
+        <option value="novita">Novita AI</option>
+        <option value="nvidia">NVIDIA NIM</option>
+        <option value="octoai">OctoAI</option>
+        <option value="ollama">Ollama (Local/Offline)</option>
+        <option value="openai">OpenAI (ChatGPT)</option>
+        <option value="openrouter">OpenRouter</option>
+        <option value="perplexity">Perplexity AI</option>
+        <option value="sambanova">SambaNova</option>
+        <option value="together">Together AI</option>
+        <option value="upstage">Upstage</option>
+        <option value="xai">xAI (Grok)</option>
+    </select>
+    
+    <button id="apiKeyHelpBtn" style="margin-top: -5px; margin-bottom: 15px; background-color: #3498db;">How can I get a Gemini API key?</button>
+
+    <label for="apiKey" id="apiKeyLabel">Gemini API Key:</label>
+    <input type="password" id="apiKey" placeholder="Starts with AIzaSy...">
+    
+    <label for="modelInput">Model:</label>
+    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+      <div style="position: relative; flex-grow: 1;">
+        <input type="text" id="modelInput" placeholder="🔍 Search or select model (Leave empty for Auto)..." style="width: 100%; margin-bottom: 0; box-sizing: border-box;" autocomplete="off">
+        <div id="modelDropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; max-height: 250px; overflow-y: auto; background: #fff; border: 1px solid #ccc; border-top: none; border-radius: 0 0 4px 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); z-index: 1000;">
+        </div>
+      </div>
+      <button id="fetchModelsBtn" style="margin-bottom: 0; width: auto; white-space: nowrap;">Fetch Models</button>
+    </div>
+
+    <label for="language">Response Language:</label>
+    <select id="language">
+      <option value="English">English</option>
+      <option value="Turkish">Türkçe</option>
+      <option value="Spanish">Español</option>
+      <option value="French">Français</option>
+      <option value="German">Deutsch</option>
+      <option value="Italian">Italiano</option>
+      <option value="Portuguese">Português</option>
+      <option value="Russian">Русский</option>
+      <option value="Japanese">日本語</option>
+      <option value="Korean">한국어</option>
+      <option value="Chinese">中文</option>
+      <option value="Arabic">العربية</option>
+    </select>
+    
+    <p id="status" style="margin-top: 5px;"></p>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
